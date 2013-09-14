@@ -234,7 +234,8 @@ namespace Sep.Git.Tfs.Commands
             string gitBranchNameExpected;
             if (tfsRepositoryPath.IndexOf("$/") == 0)
             {
-                gitBranchNameExpected = tfsRepositoryPath.Remove(0, tfsRepositoryPath.IndexOf('/', 2) + 1);
+                //gitBranchNameExpected = tfsRepositoryPath.Remove(0, tfsRepositoryPath.IndexOf('/', 2) + 1);
+                gitBranchNameExpected = tfsRepositoryPath.Substring(2).Replace("/", "_");
             }
             else
             {
